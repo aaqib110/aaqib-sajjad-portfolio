@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 10%;
+    --primary: 220 60% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 20% 92%;
+    --secondary-foreground: 220 10% 10%;
+    --muted: 220 20% 92%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 220 30% 90%;
+    --accent-foreground: 220 10% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 20% 85%;
+    --input: 220 20% 85%;
+    --ring: 220 60% 50%;
+    --radius: 0.5rem;
+    --glass-background: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --gold: 45 100% 60%;
+    --gold-dark: 45 80% 50%;
+    --silver: 220 20% 90%;
+    --silver-dark: 220 20% 70%;
+  }
+
+  .dark {
+    --background: 220 30% 5%;
+    --foreground: 220 10% 95%;
+    --card: 220 30% 8%;
+    --card-foreground: 220 10% 95%;
+    --popover: 220 30% 8%;
+    --popover-foreground: 220 10% 95%;
+    --primary: 220 60% 60%;
+    --primary-foreground: 220 10% 5%;
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 220 10% 95%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 10% 70%;
+    --accent: 220 30% 20%;
+    --accent-foreground: 220 10% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 220 10% 95%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 220 60% 60%;
+    --glass-background: rgba(15, 20, 30, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --gold: 45 100% 60%;
+    --gold-dark: 45 80% 50%;
+    --silver: 220 20% 70%;
+    --silver-dark: 220 20% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at 50% 50%, hsl(var(--background)) 0%, hsl(var(--background) / 0.8) 100%);
+  }
+  main {
+    @apply pt-16; /* Add padding to prevent content from being hidden behind fixed navbar */
+  }
+}
+
+/* Luxury Glass Effect */
+.luxury-glass {
+  background: var(--glass-background);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.luxury-card {
+  @apply luxury-glass rounded-lg overflow-hidden;
+  transition: all 0.4s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.luxury-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Gold Accents */
+.gold-border {
+  border: 1px solid hsl(var(--gold));
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.gold-text {
+  color: hsl(var(--gold));
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+/* Gradient Text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-dark)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, hsl(var(--silver)), hsl(var(--silver-dark)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animated Background */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* Parallax Effect */
+.parallax {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+/* Cursor Effects */
+.cursor-glow {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 40%, rgba(255, 215, 0, 0) 70%);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: overlay;
+}
+
+/* 3D Card Effect */
+.card-3d-container {
+  perspective: 1000px;
+}
+
+.card-3d {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-gold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Button Styles */
+.btn-luxury {
+  @apply relative overflow-hidden rounded-full;
+  background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-dark)));
+  color: hsl(var(--background));
+  transition: all 0.3s ease;
+}
+
+.btn-luxury:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn-luxury::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.btn-luxury:hover::before {
+  left: 100%;
+}
+
+/* Canvas Container */
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Particle Background */
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+/* Radial Gradient */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 70%);
+}
+
+/* Floating Animation for Hero Elements */
+@keyframes float-slow {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
