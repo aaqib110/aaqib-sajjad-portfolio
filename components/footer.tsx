@@ -25,7 +25,7 @@ export function Footer() {
               </p>
               <div className="flex items-center space-x-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/aaqib110"
                   className="hover:text-[hsl(var(--gold))] transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export function Footer() {
                   <Github className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/aaqib110/"
                   className="hover:text-[hsl(var(--gold))] transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
