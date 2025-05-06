@@ -25,7 +25,6 @@ export default function ProjectsPage() {
       liveLink: "https://www.royaamed.com/",
       // githubLink: "#",
       image: "/royaamed.png?height=600&width=800",
-      company: "AmbitSol",
     },
     {
       title: "Biltre - Invoicing and Billing Software",
@@ -35,7 +34,6 @@ export default function ProjectsPage() {
       liveLink: "https://www.alhijamah.com/",
       // githubLink: "#",
       image: "/biltre3.png?height=600&width=800",
-      company: "AmbitSol",
     },
     {
       title: "Umar Welfare Foundation",
@@ -45,7 +43,6 @@ export default function ProjectsPage() {
       liveLink: "https://www.umarwelfare.org/",
       // githubLink: "#",
       image: "/umarwelfare.png?height=600&width=800",
-      company: "AmbitSol",
     },
     {
       title: "Abbad Tours",
@@ -55,7 +52,6 @@ export default function ProjectsPage() {
       liveLink: "https://abbadtours.com.pk/",
       // githubLink: "#",
       image: "/abbad-tours4.png?height=600&width=800",
-      company: "AmbitSol",
     },
     {
       title: "Al Ghufran Hijamah Center",
@@ -65,7 +61,6 @@ export default function ProjectsPage() {
       liveLink: "https://www.alhijamah.com/",
       // githubLink: "#",
       image: "/alghufran-hijamah2.png?height=600&width=800",
-      company: "AmbitSol",
     },
     {
       title: "Al Hijamah Store",
@@ -75,7 +70,6 @@ export default function ProjectsPage() {
       liveLink: "https://store.alhijamah.com/",
       // githubLink: "#",
       image: "/alhijamah-store.png?height=600&width=800",
-      company: "AmbitSol",
     },
     {
       title: "Machcoal Private Limited",
@@ -85,7 +79,6 @@ export default function ProjectsPage() {
       liveLink: "https://machcoal.com/",
       // githubLink: "#",
       image: "/machcoal1.png?height=600&width=800",
-      company: "BizTorch",
     },
   ]
 
@@ -159,10 +152,6 @@ export default function ProjectsPage() {
                             </a>
                           </Button> */}
                         </div>
-                        {/* Company name */}
-                        <p className="text-sm text-muted-foreground mt-2">
-                          <span className="font-semibold">Company:</span> {project.company || "N/A"}
-                        </p>
                       </div>
                     </div>
                   </ParallaxCard>
